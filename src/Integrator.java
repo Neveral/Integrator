@@ -23,7 +23,8 @@ public class Integrator {
     }
 
     public static void main(String[] args) {
-        System.out.println("Values of integral: ");
+        System.out.println("Значение интеграла: ");
+        //Пример вычисление интеграла в промежутке от 0 до 1 с точностью 0.0001
         Integrator integrator = new Integrator("log(x)*log(1+x)", 0, 1, 0.00001);
 
     }
@@ -48,7 +49,7 @@ public class Integrator {
             dots[i] = calc.getAnswer(polish, dots[i]-h/2);
         }
         double answer = rect.integrate(dots, h);
-        System.out.println(answer);
+        System.out.println("Метод прямоугольников: " + answer);
     }
 
     public void calculateByTrapMethod(double a, double b, double occuracy, List<String> polish) {
@@ -71,7 +72,7 @@ public class Integrator {
             dots[i] = calc.getAnswer(polish, dots[i]);
         }
         double answer = trap.integrate(dots, h);
-        System.out.println(answer);
+        System.out.println("Метод трапеций: " + answer);
     }
 
     public void calculateBySimpMethod(double a, double b, double occuracy, List<String> polish) {
@@ -94,6 +95,6 @@ public class Integrator {
             dots[i] = calc.getAnswer(polish, dots[i]);
         }
         double answer = simps.integrate(dots, h);
-        System.out.println(answer);
+        System.out.println("Метод Симпсона: " + answer);
     }
 }
